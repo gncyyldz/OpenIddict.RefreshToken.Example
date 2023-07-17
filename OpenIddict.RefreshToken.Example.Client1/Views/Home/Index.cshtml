@@ -1,0 +1,38 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-action="Index" asp-controller="Home" asp-route-button="GET">
+    <button>Get İstek Yap</button>
+</form>
+
+<form asp-action="Index" asp-controller="Home" asp-route-button="POST">
+    <button>Post İstek Yap</button>
+</form>
+
+<form asp-action="Logout" asp-controller="Authentication" method="post">
+    <button class="btn btn-lg btn-danger" type="submit">Sign out</button>
+</form>
+
+<a asp-action="Refresh" asp-controller="Authentication">Refresh Token</a>
+
+@if (ViewBag.Properties is not null)
+{
+    <ul>
+        @foreach (var property in ViewBag.Properties as IOrderedEnumerable<KeyValuePair<string, string>>)
+        {
+            <li>@property.Key ====> @property.Value</li>
+        }
+    </ul>
+}
+
+<p>
+    @Model
+</p>

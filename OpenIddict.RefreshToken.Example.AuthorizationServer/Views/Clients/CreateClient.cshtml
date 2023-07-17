@@ -1,0 +1,44 @@
+﻿@model OpenIddict.RefreshToken.Example.AuthorizationServer.ViewModels.ClientCreateVM
+
+@{
+    ViewData["Title"] = "CreateClient";
+}
+
+<h1>CreateClient</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateClient">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <input asp-for="ClientId" class="form-control" />
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClientSecret" class="control-label"></label>
+                <input asp-for="ClientSecret" class="form-control" />
+                <span asp-validation-for="ClientSecret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayName" class="control-label"></label>
+                <input asp-for="DisplayName" class="form-control" />
+                <span asp-validation-for="DisplayName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RedirectUrl" class="control-label"></label>
+                <input asp-for="RedirectUrl" class="form-control" />
+                <span asp-validation-for="RedirectUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostLogoutRedirectUri" class="control-label"></label>
+                <input asp-for="PostLogoutRedirectUri" class="form-control" />
+                <span asp-validation-for="PostLogoutRedirectUri" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
